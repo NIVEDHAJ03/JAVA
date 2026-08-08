@@ -206,6 +206,3 @@ String str1 = sc.nextLine().toLowerCase();
 
         System.out.println("Longest word = " + longest);
 
-// 
-
-
