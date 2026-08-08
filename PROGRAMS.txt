@@ -1,0 +1,211 @@
+----> ARRAYS SIMPLE PROGRMAS
+
+// SUM OF ARRAY
+int sum = 0;
+ for (int i = 0; i < n; i++) {
+   arr[i] = sc.nextInt();
+   sum = sum + arr[i];}
+System.out.println("Sum = " + sum);
+
+// AVERAGE OF ARRAYS
+int sum = 0;
+ for (int i = 0; i < n; i++) {
+   arr[i] = sc.nextInt();
+   sum += arr[i];}
+ double average = (double) sum / n;
+ System.out.println("Average = " + average);
+
+// ARRAYS SORT
+ for (int i = 0; i < n; i++) {
+    arr[i] = sc.nextInt();
+ }
+ Arrays.sort(arr);
+ for (int x : arr) {
+   System.out.print(x + " ");
+}
+
+// UNIQUE ELEMENTS USING XOR 
+int result = 0;
+ for (int i = 0; i < n; i++) {
+      int value = sc.nextInt();
+      result = result ^ value;
+}
+System.out.println("Unique element = " + result);
+
+// FIND DUPLICATES
+for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+
+                if (arr[i] == arr[j]) {
+                    System.out.print(arr[i] + " ");
+                    break;
+                }
+            }
+        }
+
+// REMOVE DDUPLICATES
+for (int i = 0; i < arr.length; i++) {
+            boolean duplicate = false;
+
+            for (int j = 0; j < i; j++) {
+                if (arr[i] == arr[j]) {
+                    duplicate = true;
+                    break;
+                }
+            }
+
+            if (!duplicate) {
+                System.out.print(arr[i] + " ");
+            }
+        }
+
+// MOVE ZEROS 
+class Solution {
+    public void moveZeroes(int[] nums) {
+        int i = 0;
+
+        for (int n : nums)
+            if (n != 0)
+                nums[i++] = n;
+
+        while (i < nums.length)
+            nums[i++] = 0;
+    }
+}
+
+----> STRINGS SIMPLE PROGRAMS
+//REVERSE
+String reverse = "";
+
+for (int i = str.length() - 1; i >= 0; i--) {
+    reverse += str.charAt(i);
+}
+
+// PALINDROME
+String str = sc.nextLine();
+String reverse = "";
+for (int i = str.length() - 1; i >= 0; i--) {
+     reverse = reverse + str.charAt(i);
+}
+if (str.equals(reverse))
+    System.out.println("Palindrome");
+else
+    System.out.println("Not Palindrome");
+
+// COUNT VOWELS
+String str = sc.nextLine().toLowerCase();
+int count = 0;
+for (int i = 0; i < str.length(); i++) {
+    char ch = str.charAt(i);
+    if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+          count++;
+        }
+}
+System.out.println("Vowels = " + count);  
+
+// COUNT CONSONANTS
+String str = sc.nextLine().toLowerCase();
+int count = 0;
+for (int i = 0; i < str.length(); i++) {
+    char ch = str.charAt(i);
+     if (ch >= 'a' && ch <= 'z') {
+           if (ch != 'a' && ch != 'e' && ch != 'i' && ch != 'o' && ch != 'u') {
+                   count++;
+                }
+       }
+  }
+System.out.println("Consonants = " + count);
+
+// COUNT WORDS
+ String str = sc.nextLine().trim();
+ if (str.isEmpty()) {
+    System.out.println("Words = 0");
+    return;
+ }
+String[] words = str.split("\\s+");
+System.out.println("Words = " + words.length);
+
+// REMOVE DUPLICATES
+String result = "";
+for (int i = 0; i < str.length(); i++) {
+    char ch = str.charAt(i);
+    if (result.indexOf(ch) == -1) {
+          result = result + ch;
+        }
+}
+System.out.println(result);
+
+// CHARACTER FREQUENT
+boolean[] visited = new boolean[str.length()];
+
+        for (int i = 0; i < str.length(); i++) {
+
+            if (visited[i])
+                continue;
+
+            char ch = str.charAt(i);
+            int count = 1;
+
+            for (int j = i + 1; j < str.length(); j++) {
+
+                if (str.charAt(j) == ch) {
+                    count++;
+                    visited[j] = true;
+                }
+            }
+
+            System.out.println(ch + " = " + count);
+}
+
+// ANAGRAMS
+String str1 = sc.nextLine().toLowerCase();
+        String str2 = sc.nextLine().toLowerCase();
+
+        if (str1.length() != str2.length()) {
+            System.out.println("Not Anagram");
+            return;
+        }
+
+        char[] a = str1.toCharArray();
+        char[] b = str2.toCharArray();
+
+        Arrays.sort(a);
+        Arrays.sort(b);
+
+        if (Arrays.equals(a, b))
+            System.out.println("Anagram");
+        else
+            System.out.println("Not Anagram");
+
+// CHECK ROTATION
+ String str1 = sc.nextLine();
+        String str2 = sc.nextLine();
+
+        if (str1.length() == str2.length() &&
+            (str1 + str1).contains(str2)) {
+
+            System.out.println("Rotation");
+        }
+        else {
+            System.out.println("Not Rotation");
+        }
+
+// LONGEST WORD IN GN STR
+   String str = sc.nextLine();
+
+        String[] words = str.trim().split("\\s+");
+
+        String longest = "";
+
+        for (String word : words) {
+
+            if (word.length() > longest.length()) {
+                longest = word;
+            }
+        }
+
+        System.out.println("Longest word = " + longest);
+
+// 
+
+
